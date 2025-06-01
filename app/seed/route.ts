@@ -4,7 +4,7 @@ export async function GET(req: NextRequest) {
   try {
     // Lazy import dependencies at runtime
     const postgres = (await import('postgres')).default;
-    const bcrypt = (await import('bcrypt')).default;
+    const bcrypt = (await import('bcryptjs')).default;
 
     // Connect to the database using environment variable
     const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
